@@ -5,7 +5,7 @@ buildscript {
 	dependencies {
 		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.14.RELEASE'
 	    classpath 'com.google.cloud.tools:appengine-gradle-plugin:1.+'
-		classpath 'org.akhikhl.gretty:gretty:+'
+		
 	}
 }
 
@@ -15,8 +15,6 @@ plugins {
 }
 
 apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
 apply plugin: 'com.google.cloud.tools.appengine'
 
 
@@ -34,7 +32,7 @@ configurations {
 }
 
 dependencies {
-	compile 'org.springframework.boot:spring-boot-starter-web', { exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat' }
+	compile 'org.springframework.boot:spring-boot-starter-web'
 	compile 'org.springframework.boot:spring-boot-starter-websocket'
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compile 'org.postgresql:postgresql'
@@ -44,8 +42,8 @@ dependencies {
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
 	compile 'com.google.cloud.sql:postgres-socket-factory:1.0.14'
 	
-	providedCompile 'javax.servlet:javax.servlet-api'
-    providedCompile 'com.google.appengine:appengine:+'
+	//providedCompile 'javax.servlet:javax.servlet-api'
+   // providedCompile 'com.google.appengine:appengine:+'
 }
 
 appengine {

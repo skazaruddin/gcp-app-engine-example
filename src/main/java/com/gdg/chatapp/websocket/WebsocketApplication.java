@@ -12,12 +12,9 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @SpringBootApplication
-public class WebsocketApplication extends SpringBootServletInitializer {
+public class WebsocketApplication  {
 
-	@Override
-	  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		 return application.sources(WebsocketApplication.class);
-	  }
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(WebsocketApplication.class, args);
